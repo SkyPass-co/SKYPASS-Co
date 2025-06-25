@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKYPASS - Viajes de lujo a Europa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+    }
+    header {
+      background-color: #001F3F;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+    .hero {
+      background-image: url('https://source.unsplash.com/1600x800/?europe,luxury');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h2 {
+      font-size: 2.8em;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
+    .hero button {
+      background-color: #A6192E;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      color: #001F3F;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
+    .destinos, .testimonios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      flex: 1 1 250px;
+      background: #f4f4f4;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+      height: 150px;
+      object-fit: cover;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #A6192E;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #001F3F;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    @media (max-width: 600px) {
+      .hero h2 { font-size: 2em; }
+      .hero p { font-size: 1em; }
+      nav a { display: inline-block; margin: 5px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SKYPASS</h1>
+  <nav>
+    <a href="#destinos">Destinos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="#cotizador">Cotiza</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Lo tuyo es volar</h2>
+  <p>Lo nuestro, hacerlo posible</p>
+  <button onclick="document.location='#cotizador'">Explora tus próximos destinos</button>
+</section>
+
+<section id="destinos">
+  <h3 class="section-title">Destinos de lujo</h3>
+  <div class="destinos">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?paris,eiffel" alt="París">
+      <p>París, Francia</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?rome,colosseum" alt="Roma">
+      <p>Roma, Italia</p>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?london,bridge" alt="Londres">
+      <p>Londres, Reino Unido</p>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <h3 class="section-title">¿Quiénes somos?</h3>
+  <p style="text-align: center;">
+    En SKYPASS diseñamos experiencias únicas para viajeros ejecutivos que buscan lujo, eficiencia y exclusividad en Europa. 
+    Nuestra misión: hacer tus viajes posibles, cómodos y memorables.
+  </p>
+</section>
+
+<section id="testimonios">
+  <h3 class="section-title">Lo que dicen nuestros clientes</h3>
+  <div class="testimonios">
+    <div class="card">
+      <p>"Un servicio impecable y precios inmejorables. ¡Recomendado 100%!"</p>
+      <small>- Mariana G.</small>
+    </div>
+    <div class="card">
+      <p>"Viajar con SKYPASS es como tener un asistente personal en Europa."</p>
+      <small>- Carlos T.</small>
+    </div>
+  </div>
+</section>
+
+<section id="cotizador">
+  <h3 class="section-title">Solicita tu cotización</h3>
+  <form>
+    <input type="text" placeholder="Tu nombre" required>
+    <input type="email" placeholder="Correo electrónico" required>
+    <input type="text" placeholder="Destino de interés" required>
+    <input type="text" placeholder="Fechas del viaje" required>
+    <textarea placeholder="Detalles adicionales (opcional)"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<a class="whatsapp-button" href="https://wa.me/525565346181?text=Hola%2C%20quiero%20cotizar%20un%20viaje%20con%20SKYPASS%20✈️" target="_blank">
+  💬 WhatsApp
+</a>
+
+<footer>
+  Síguenos en <a href="https://instagram.com/skypass025" target="_blank" style="color: #f2f2f2;">@skypass025</a> • © 2025 SKYPASS
+</footer>
+
+</body>
+</html>
