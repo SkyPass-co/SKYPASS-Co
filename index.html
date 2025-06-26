@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SKYPASS - Luxury in the Skies</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #002C5F;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin: 0;
+    }
+    h2 {
+      color: #002C5F;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .gallery img {
+      width: 300px;
+      border-radius: 10px;
+    }
+    .form-container {
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .whatsapp-button {
+      display: block;
+      background-color: #25D366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://i.imgur.com/8TfpZKl.png" alt="SKYPASS Logo"/>
+    <h1>SKYPASS</h1>
+    <p>Luxury in the Skies</p>
+  </header>
+
+  <h2>Destinos Destacados</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="París">
+    <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a" alt="Roma">
+    <img src="https://images.unsplash.com/photo-1498661367879-c6cf60b4e0f4" alt="Londres">
+    <img src="https://images.unsplash.com/photo-1534249382539-d49f5f162252" alt="Madrid">
+    <img src="https://images.unsplash.com/photo-1576089177898-5c697d9d0a5a" alt="Ámsterdam">
+    <img src="https://images.unsplash.com/photo-1549693578-d683be217e58" alt="Narita">
+  </div>
+
+  <div class="form-container">
+    <h2>Solicita tu Cotización</h2>
+    <form onsubmit="enviarCotizacion(event)">
+      <label>Destino:</label>
+      <select id="destino">
+        <option>París</option>
+        <option>Roma</option>
+        <option>Londres</option>
+        <option>Madrid</option>
+        <option>Ámsterdam</option>
+        <option>Narita</option>
+      </select>
+      <label>Fecha estimada de viaje:</label>
+      <input type="date" id="fecha" required>
+      <label>Número de personas:</label>
+      <input type="number" id="personas" required>
+      <a id="btn-whatsapp" class="whatsapp-button" href="#">Cotizar por WhatsApp</a>
+    </form>
+  </div>
+
+  <script>
+    function enviarCotizacion(event) {
+      event.preventDefault();
+      const destino = document.getElementById('destino').value;
+      const fecha = document.getElementById('fecha').value;
+      const personas = document.getElementById('personas').value;
+      const mensaje = `Hola, me gustaría cotizar un viaje a ${destino} para ${personas} persona(s), estimado para la fecha: ${fecha}`;
+      const url = `https://wa.me/525565346181?text=${encodeURIComponent(mensaje)}`;
+      document.getElementById('btn-whatsapp').setAttribute('href', url);
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
